@@ -1,0 +1,11 @@
+{
+  "title" : "शीर्षक",
+  "app_local_demo" : "app_local_demo",
+  "demo_details" : "डेमो_विवरण",
+  "loadData" : "लोड डेटा",
+  "removeData": "डेटा हटाएं",
+  "changeLanguage": "भाषा बदलें",
+  "english": "अंग्रेज़ी",
+  "hindi": "हिंदी",
+  "addData": "डेटा जोड़ें"
+}
