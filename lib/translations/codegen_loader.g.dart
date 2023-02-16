@@ -23,7 +23,8 @@ class CodegenLoader extends AssetLoader{
   "changeLanguage": "Change Language",
   "english": "English",
   "hindi": "Hindi",
-  "addData": "Add Data"
+  "addData": "Add Data",
+  "userDataPage": "User Data Page"
 };
 static const Map<String,dynamic> hi = {
   "title": "शीर्षक",
@@ -34,7 +35,8 @@ static const Map<String,dynamic> hi = {
   "changeLanguage": "भाषा बदलें",
   "english": "अंग्रेज़ी",
   "hindi": "हिंदी",
-  "addData": "डेटा जोड़ें"
+  "addData": "डेटा जोड़ें",
+  "userDataPage": "उपयोगकर्ता डेटा पृष्ठ"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "hi": hi};
 }

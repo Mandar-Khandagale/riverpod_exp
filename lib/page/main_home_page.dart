@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_exp/navigations/routes.dart';
 import 'package:riverpod_exp/providers/providers.dart';
 import 'package:riverpod_exp/translations/locale_keys.g.dart';
 import 'package:riverpod_exp/utils/molecules/bottomsheet/add_details_bottomsheet.dart';
@@ -57,6 +58,19 @@ class MainHomePage extends ConsumerWidget {
                   );
                 },
               ),
+              SizedBox(
+                height: size.height * 0.05,
+                width: size.width * 0.35,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.userDataPage);
+                    },
+                    child: Text(LocaleKeys.userDataPage.tr()),
+                  ),
+                ),
+              )
             ],
           ),
         ),

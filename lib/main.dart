@@ -2,9 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:riverpod_exp/page/main_home_page.dart';
-import 'package:riverpod_exp/responsiveness/using_layout_builder/layout_builder.dart';
 import 'package:riverpod_exp/translations/codegen_loader.g.dart';
 
 void main() async{
@@ -57,25 +55,6 @@ class MyApp extends StatelessWidget {
       locale: context.locale,
       home: const MainHomePage(),
       //home: const UsingLayoutBuilder(),
-    );
-  }
-}
-
-class MyApp1 extends StatelessWidget {
-  const MyApp1({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ResponsiveSizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: const UsingLayoutBuilder(),
-        );
-      }
     );
   }
 }

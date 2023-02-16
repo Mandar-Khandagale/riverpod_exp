@@ -10,5 +10,6 @@ abstract class  LocaleKeys {
   static const english = 'english';
   static const hindi = 'hindi';
   static const addData = 'addData';
+  static const userDataPage = 'userDataPage';
 
 }

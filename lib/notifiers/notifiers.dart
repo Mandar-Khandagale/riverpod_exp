@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_exp/core/constants/api_endpoints.dart';
+import 'package:riverpod_exp/model/user_model.dart';
+import 'package:riverpod_exp/providers/providers.dart';
 
 class CounterChangeNotifier extends ChangeNotifier{
 
@@ -52,3 +55,9 @@ class ElementListStateNotifier extends StateNotifier<List<String>>{
 
 
 }
+  ///future provider
+final userProvider = FutureProvider.autoDispose<List<User>>((ref) async {
+  final dioClient = ref.read(dioClientProvider);
+  final res = await dioClient.get(Endpoints.userData);
+  return (res.data as List).map((e) => User.fromJson(e)).toList();
+});
