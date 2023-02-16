@@ -99,3 +99,17 @@ Avoid using StateProvide when your state is a complex object (such as a custom 
 NOTE :—  It is essential to note that when you extend your class with StateNotifier, you must pass the initial value in the constructor, or else you will encounter an error. So let's provide the initial value.
 
 —  StateNotifierProvider is a provider that is used to listen to and expose a StateNotifier.
+
+4. FutureProvider :-
+- If you are calling an API to get the data, then using FutureProvider is a better option.
+- FutureProvider is mainly used for this type of scenario where your code is asynchronous.
+- AsyncValue is basically a class that is used to safely manipulate asynchronous data.
+- By using AsyncValue, you are guaranteed that you cannot forget to handle the loading/error state of an asynchronous operation.
+- So, we can use .when to convert an AsyncValue into either a progress indicator, an error screen, or to show the data:
+	- This will automatically rebuild the UI when the Future completes.
+	
+5. StreamProvider :-
+- StreamProvider is used to watch a Stream of results from a realtime API and reactively rebuild the UI.
+This is usually used where we want to:
+    -- listen to Firebase or web-sockets
+    -- rebuild another provider every few seconds
