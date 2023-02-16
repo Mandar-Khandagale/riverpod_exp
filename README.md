@@ -79,38 +79,38 @@ final helloWorldProvider = Provider<String>((ref) {
 8. AsyncNotifierProvider (new in Riverpod 2.0)
 
 1. Provider :—
-— Provider is great for accessing dependencies and objects that don’t change.
-You may use this to access a repository, a logger, or some other class that doesn't contain mutable state.
-— This provider just allows you to only read its data. It does not allow you to change the data.
+* Provider is great for accessing dependencies and objects that don’t change.
+* You may use this to access a repository, a logger, or some other class that doesn't contain mutable state.
+* This provider just allows you to only read its data. It does not allow you to change the data.
 
 2. StateProvider :—
-— StateProvider is great for storing simple state objects that can change, such as a counter value
-— StateProvider is useful where you have simple state like boolean, integer, string, etc.
-Avoid using StateProvide when your state is a complex object (such as a custom class, a list/map, ...), the logic for modifying your state is more advanced.
+* StateProvider is great for storing simple state objects that can change, such as a counter value
+* StateProvider is useful where you have simple state like boolean, integer, string, etc.
+* Avoid using StateProvide when your state is a complex object (such as a custom class, a list/map, ...), the logic for modifying your state is more advanced.
 
 
 3. StateNotifier & StateNotifierProvider :—
-— Use this to listen to and expose a StateNotifier.
-— StateNotifierProvider and StateNotifier are ideal for managing state that may change in reaction to an event or user interaction.
-— This is an observable class that can store one single state.
-— StateNotifier is designed to be subclassed, which means you need to extend your class with this class.
+* Use this to listen to and expose a StateNotifier.
+* StateNotifierProvider and StateNotifier are ideal for managing state that may change in reaction to an event or user interaction.
+* This is an observable class that can store one single state.
+* StateNotifier is designed to be subclassed, which means you need to extend your class with this class.
  Eg:— class FruitsNotifier extends StateNotifier<List<String>> {}
 
 NOTE :—  It is essential to note that when you extend your class with StateNotifier, you must pass the initial value in the constructor, or else you will encounter an error. So let's provide the initial value.
 
-—  StateNotifierProvider is a provider that is used to listen to and expose a StateNotifier.
+—-  StateNotifierProvider is a provider that is used to listen to and expose a StateNotifier.
 	
 4. FutureProvider :-
-- If you are calling an API to get the data, then using FutureProvider is a better option.
-- FutureProvider is mainly used for this type of scenario where your code is asynchronous.
-- AsyncValue is basically a class that is used to safely manipulate asynchronous data.
-- By using AsyncValue, you are guaranteed that you cannot forget to handle the loading/error state of an asynchronous operation.
-- So, we can use .when to convert an AsyncValue into either a progress indicator, an error screen, or to show the data:
-	- This will automatically rebuild the UI when the Future completes.
+* If you are calling an API to get the data, then using FutureProvider is a better option.
+* FutureProvider is mainly used for this type of scenario where your code is asynchronous.
+* AsyncValue is basically a class that is used to safely manipulate asynchronous data.
+* By using AsyncValue, you are guaranteed that you cannot forget to handle the loading/error state of an asynchronous operation.
+* So, we can use .when to convert an AsyncValue into either a progress indicator, an error screen, or to show the data:
+	--- This will automatically rebuild the UI when the Future completes.
 	
 5. StreamProvider :-
-- StreamProvider is used to watch a Stream of results from a realtime API and reactively rebuild the UI.
-This is usually used where we want to:
+* StreamProvider is used to watch a Stream of results from a realtime API and reactively rebuild the UI.
+This is usually used where we want to:-
     -- listen to Firebase or web-sockets
     -- rebuild another provider every few seconds
 
