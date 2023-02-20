@@ -126,9 +126,30 @@ This is usually used where we want to:-
 * git push -u -f origin "branch_name"
 
 
-### Easy_localisation auto generate command :--
+## Easy_localisation :--
 
- #### * flutter pub run easy_localization:generate -S "asset/locales"  -O "lib/translations"
+### Step 1 :-
+Get the package "easy_localization: ^3.0.1"
+
+### Step 2 :-
+Add json files in assets folder and also declare in pubspec.ymal file
+
+### Step 3 :-
+before your runApp make sure to initialise EasyLocalization.ensureInitialized() and then
+Wrap your main widget MyApp with EasyLocalisation widget and pass all the required parameters like:-
+	path: 'asset/locales',
+        startLocale: const Locale("hi"),
+        supportedLocales: const [Locale("en"), Locale("hi")],
+        fallbackLocale:const Locale("en"),
+        assetLoader: const CodegenLoader(),
+	
+### Step 4 :-
+Also app localizationsDelegates: context.localizationDelegates, and supportedLocales: context.supportedLocales, in your MaterialApp
+
+### Step 5 :- 
+then run below following commands to generate CodegenLoader file and keys files to use the strings
+
+#### * flutter pub run easy_localization:generate -S "asset/locales"  -O "lib/translations"
  
- #### * flutter pub run easy_localization:generate -S "asset/locales" -O "lib/translations" -o "locale_keys.g.dart" -f keys
+#### * flutter pub run easy_localization:generate -S "asset/locales" -O "lib/translations" -o "locale_keys.g.dart" -f keys
 
