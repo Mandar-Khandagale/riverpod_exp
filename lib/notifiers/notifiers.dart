@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_exp/core/constants/api_endpoints.dart';
+import 'package:riverpod_exp/core/shared_provider/shared_providers.dart';
 import 'package:riverpod_exp/model/user_model.dart';
-import 'package:riverpod_exp/providers/providers.dart';
 
 class CounterChangeNotifier extends ChangeNotifier{
 

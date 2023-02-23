@@ -2,7 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:riverpod_exp/page/main_home_page.dart';
+import 'package:riverpod_exp/feature/products/view/product_page.dart';
+import 'package:riverpod_exp/navigations/app_routes.dart';
 import 'package:riverpod_exp/translations/codegen_loader.g.dart';
 
 void main() async{
@@ -48,12 +49,13 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
       ),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: const MainHomePage(),
+      home: const ProductPage(),
+      routes: AppRoutes.routes,
       //home: const UsingLayoutBuilder(),
     );
   }

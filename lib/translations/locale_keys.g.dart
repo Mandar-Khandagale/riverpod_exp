@@ -11,5 +11,10 @@ abstract class  LocaleKeys {
   static const hindi = 'hindi';
   static const addData = 'addData';
   static const userDataPage = 'userDataPage';
+  static const riverPodExp = 'riverPodExp';
+  static const joke = 'joke';
+  static const favouritePage = 'favouritePage';
+  static const productPage = 'productPage';
+  static const settingsPage = 'settingsPage';
 
 }

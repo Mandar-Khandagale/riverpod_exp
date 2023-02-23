@@ -24,7 +24,12 @@ class CodegenLoader extends AssetLoader{
   "english": "English",
   "hindi": "Hindi",
   "addData": "Add Data",
-  "userDataPage": "User Data Page"
+  "userDataPage": "User Data Page",
+  "riverPodExp": "RiverPod Example",
+  "joke": "Joke",
+  "favouritePage": "Favourites",
+  "productPage": "Products",
+  "settingsPage": "Settings"
 };
 static const Map<String,dynamic> hi = {
   "title": "शीर्षक",
@@ -36,7 +41,12 @@ static const Map<String,dynamic> hi = {
   "english": "अंग्रेज़ी",
   "hindi": "हिंदी",
   "addData": "डेटा जोड़ें",
-  "userDataPage": "उपयोगकर्ता डेटा पृष्ठ"
+  "userDataPage": "उपयोगकर्ता डेटा पृष्ठ",
+  "riverPodExp": "रिवरपॉड उदाहरण",
+  "joke": "चुटकुला",
+  "favouritePage": "पसंदीदा",
+  "productPage": "उत्पादों",
+  "settingsPage": "समायोजन"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "hi": hi};
 }
