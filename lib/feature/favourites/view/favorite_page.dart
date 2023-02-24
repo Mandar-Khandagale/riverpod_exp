@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_exp/feature/favourites/provider/favourite_provider.dart';
 import 'package:riverpod_exp/feature/products/provider/product_provider.dart';
+import 'package:riverpod_exp/feature/products/widgets/product_detail_page.dart';
+import 'package:riverpod_exp/navigations/routes.dart';
 import 'package:riverpod_exp/translations/locale_keys.g.dart';
 
 class FavouritePage extends ConsumerWidget {
@@ -28,6 +30,16 @@ class FavouritePage extends ConsumerWidget {
                 return Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: ListTile(
+                    onTap: () {
+                      Navigator.pushNamed(context, Routes.productDetailPage,
+                          arguments: ProductDetailPageArgs(favouriteList[index]));
+                    },
+                    leading: Hero(
+                      tag: favouriteList[index].id ?? 0,
+                      child: CircleAvatar(
+                        child: Image.network(favouriteList[index].image ?? ""),
+                      ),
+                    ),
                     title: Text(favouriteList[index].title ?? ""),
                     subtitle: Text(favouriteList[index].price.toString()),
                     trailing: IconButton(

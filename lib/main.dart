@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:riverpod_exp/core/shared_provider/shared_providers.dart';
 import 'package:riverpod_exp/feature/products/view/product_page.dart';
 import 'package:riverpod_exp/navigations/app_routes.dart';
 import 'package:riverpod_exp/translations/codegen_loader.g.dart';
@@ -27,13 +28,13 @@ void main() async{
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    debugPrint("-------Build--------");
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeData = ref.watch(themeChangeProvider);
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -57,6 +58,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.amber,
       ),
+      darkTheme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      themeMode: themeData,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

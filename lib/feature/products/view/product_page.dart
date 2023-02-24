@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_exp/feature/products/provider/product_provider.dart';
+import 'package:riverpod_exp/feature/products/widgets/product_detail_page.dart';
 import 'package:riverpod_exp/navigations/routes.dart';
 import 'package:riverpod_exp/translations/locale_keys.g.dart';
 
@@ -52,16 +53,12 @@ class ProductPage extends ConsumerWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: ListTile(
                     onTap: () {
-
+                      Navigator.pushNamed(context, Routes.productDetailPage,arguments: ProductDetailPageArgs(productListData[index]));
                     },
                       leading: Hero(
                         tag: productListData[index].id ?? 0,
                         child: CircleAvatar(
-                          child: FittedBox(
-                            fit: BoxFit.fill,
-                            child:
-                                Image.network(productListData[index].image ?? ""),
-                          ),
+                          child: Image.network(productListData[index].image ?? ""),
                         ),
                       ),
                       title: Text(productListData[index].title ?? ""),
