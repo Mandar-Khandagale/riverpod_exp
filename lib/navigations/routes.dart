@@ -5,4 +5,5 @@ class Routes {
   static const String favouritePage = "/favouritePage";
   static const String productPage = "/productPage";
   static const String settingsPage = "/settingsPage";
+  static const String productDetailPage = "/productDetailPage";
 }

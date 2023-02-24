@@ -18,7 +18,9 @@ class SettingsPage extends StatelessWidget {
         child: Column(
           children: [
              ListTile(
-               onTap: () => Navigator.pushNamed(context, Routes.jokePage),
+               onTap: () {
+                 Navigator.pushReplacementNamed(context, Routes.jokePage);
+               },
                title: Text(LocaleKeys.joke.tr()),
              ),
             const Spacer(),

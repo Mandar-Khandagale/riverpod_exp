@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:riverpod_exp/main.dart';
 import 'package:riverpod_exp/translations/locale_keys.g.dart';
 
 class LanguageSelectionWidget extends StatelessWidget {
@@ -20,12 +21,14 @@ class LanguageSelectionWidget extends StatelessWidget {
           InkWell(
               onTap: () {
                 context.setLocale(const Locale("en"));
+                widgetsBinding?.performReassemble();
               },
               child: Text(LocaleKeys.english.tr())),
           const VerticalDivider(color: Colors.black),
           InkWell(
               onTap: () {
                 context.setLocale(const Locale("hi"));
+                widgetsBinding?.performReassemble();
               },
               child: Text(LocaleKeys.hindi.tr())),
         ],

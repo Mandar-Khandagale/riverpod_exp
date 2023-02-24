@@ -6,9 +6,14 @@ import 'package:riverpod_exp/feature/products/view/product_page.dart';
 import 'package:riverpod_exp/navigations/app_routes.dart';
 import 'package:riverpod_exp/translations/codegen_loader.g.dart';
 
+
+///to reassemble the entire UI to update the language
+WidgetsBinding? widgetsBinding;
+
+
 void main() async{
 
-  WidgetsFlutterBinding.ensureInitialized();
+  widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
 
   runApp(
@@ -28,6 +33,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    debugPrint("-------Build--------");
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
@@ -55,7 +61,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       home: const ProductPage(),
-      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.generateRoute,
       //home: const UsingLayoutBuilder(),
     );
   }
