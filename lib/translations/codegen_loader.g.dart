@@ -29,7 +29,11 @@ class CodegenLoader extends AssetLoader{
   "joke": "Joke",
   "favouritePage": "Favourites",
   "productPage": "Products",
-  "settingsPage": "Settings"
+  "settingsPage": "Settings",
+  "homePage": "Home",
+  "cardDetails": "Card Details",
+  "myAccount": "My Account",
+  "done": "Done"
 };
 static const Map<String,dynamic> hi = {
   "title": "शीर्षक",
@@ -46,7 +50,11 @@ static const Map<String,dynamic> hi = {
   "joke": "चुटकुला",
   "favouritePage": "पसंदीदा",
   "productPage": "उत्पादों",
-  "settingsPage": "समायोजन"
+  "settingsPage": "समायोजन",
+  "homePage": "घर",
+  "cardDetails": "कार्ड के विवरण",
+  "myAccount": "मेरा खाता",
+  "done": "पूर्ण"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "hi": hi};
 }

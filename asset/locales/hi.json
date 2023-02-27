@@ -13,5 +13,9 @@
   "joke": "चुटकुला",
   "favouritePage": "पसंदीदा",
   "productPage": "उत्पादों",
-  "settingsPage": "समायोजन"
+  "settingsPage": "समायोजन",
+  "homePage": "घर",
+  "cardDetails": "कार्ड के विवरण",
+  "myAccount": "मेरा खाता",
+  "done": "पूर्ण"
 }

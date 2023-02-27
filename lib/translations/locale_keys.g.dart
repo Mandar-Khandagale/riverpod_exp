@@ -16,5 +16,9 @@ abstract class  LocaleKeys {
   static const favouritePage = 'favouritePage';
   static const productPage = 'productPage';
   static const settingsPage = 'settingsPage';
+  static const homePage = 'homePage';
+  static const cardDetails = 'cardDetails';
+  static const myAccount = 'myAccount';
+  static const done = 'done';
 
 }

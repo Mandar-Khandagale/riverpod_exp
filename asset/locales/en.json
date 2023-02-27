@@ -13,5 +13,9 @@
   "joke": "Joke",
   "favouritePage": "Favourites",
   "productPage": "Products",
-  "settingsPage": "Settings"
+  "settingsPage": "Settings",
+  "homePage": "Home",
+  "cardDetails": "Card Details",
+  "myAccount": "My Account",
+  "done": "Done"
 }

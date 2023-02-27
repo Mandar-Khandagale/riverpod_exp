@@ -25,8 +25,8 @@ class CommonBottomSheet {
       constraints: constraints,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
         ),
       ),
       builder: (ctx) {

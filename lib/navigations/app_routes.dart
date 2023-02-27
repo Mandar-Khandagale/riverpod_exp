@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_exp/feature/favourites/view/favorite_page.dart';
 import 'package:riverpod_exp/feature/joke/view/joke_page.dart';
+import 'package:riverpod_exp/feature/products/view/product_page.dart';
 import 'package:riverpod_exp/feature/products/widgets/product_detail_page.dart';
 import 'package:riverpod_exp/feature/settings/view/settings_page.dart';
 import 'package:riverpod_exp/navigations/routes.dart';
@@ -39,6 +40,11 @@ class AppRoutes {
           settings: RouteSettings(
             name: Routes.productDetailPage,
             arguments: settings.arguments),
+        );
+
+      case Routes.productPage:
+        return MaterialPageRoute(
+          builder: (context) => const ProductPage(),
         );
 
 

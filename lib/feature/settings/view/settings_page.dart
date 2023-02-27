@@ -28,23 +28,34 @@ class SettingsPage extends ConsumerWidget {
                     : Icons.dark_mode)),
           ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-             ListTile(
+      body: Column(
+        children: [
+           Padding(
+             padding: const EdgeInsets.all(10.0),
+             child: ListTile(
                onTap: () {
                  Navigator.pushReplacementNamed(context, Routes.jokePage);
                },
                title: Text(LocaleKeys.joke.tr()),
              ),
-            const Spacer(),
-            const Padding(
-              padding: EdgeInsets.all(20.0),
-              child: FittedBox(child: LanguageSelectionWidget()),
-              ),
-          ],
-        ),
+           ),
+          const Divider(thickness: 1),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ListTile(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, Routes.productPage);
+              },
+              title: Text(LocaleKeys.productPage.tr()),
+            ),
+          ),
+          const Divider(thickness: 1),
+          const Spacer(),
+          const Padding(
+            padding: EdgeInsets.all(20.0),
+            child: FittedBox(child: LanguageSelectionWidget()),
+            ),
+        ],
       )
     );
   }
