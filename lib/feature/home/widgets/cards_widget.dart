@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_exp/model/common_model.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_exp/feature/home/provider/home_provider.dart';
 
-class CardsWidget extends StatelessWidget {
+class CardsWidget extends ConsumerWidget {
   const CardsWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final cardListData = ref.watch(cardDetailsListProvider);
     return Padding(
       padding: const EdgeInsets.only(top: 10.0),
       child: SizedBox(
@@ -13,7 +15,7 @@ class CardsWidget extends StatelessWidget {
         child: ListView.separated(
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
-            itemCount: cardDetails.length,
+            itemCount: cardListData.length,
             separatorBuilder: (context, index) {
               return const SizedBox(width: 15);
             },
@@ -31,7 +33,7 @@ class CardsWidget extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 10.0),
                         child: Text(
-                          cardDetails[index].cardName ?? "",
+                          cardListData[index].cardName ?? "",
                           style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -40,7 +42,7 @@ class CardsWidget extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(top: 26.0),
                           child: Text(
-                            cardDetails[index].cardNo ?? "",
+                            cardListData[index].cardNo ?? "",
                             style: const TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
                           ),
                         ),
