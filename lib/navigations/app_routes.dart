@@ -12,7 +12,7 @@ class AppRoutes {
     switch (settings.name) {
       case Routes.home:
         return MaterialPageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => HomePage(),
           settings: const RouteSettings(name: Routes.home),
         );
 

@@ -4,9 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:riverpod_exp/core/shared_provider/shared_providers.dart';
 import 'package:riverpod_exp/feature/home/view/home_page.dart';
-import 'package:riverpod_exp/feature/products/view/product_page.dart';
 import 'package:riverpod_exp/navigations/app_routes.dart';
-import 'package:riverpod_exp/navigations/routes.dart';
 import 'package:riverpod_exp/translations/codegen_loader.g.dart';
 
 
@@ -67,7 +65,7 @@ class MyApp extends ConsumerWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      home: const HomePage(),
+      home: HomePage(),
       onGenerateRoute: AppRoutes.generateRoute,
       //home: const UsingLayoutBuilder(),
     );
