@@ -11,6 +11,8 @@ class AccountSelectionBottomSheet extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final cardList = ref.watch(cardDetailsListProvider);
     final cardListData = ref.watch(cardDetailsListProvider.notifier);
+    // final selectedAccountNotifier = ref.watch(accountSelectedProvider.notifier);
+    // final selectedAccColor = ref.watch(accountSelectedProvider);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Column(
@@ -28,7 +30,6 @@ class AccountSelectionBottomSheet extends ConsumerWidget {
               IconButton(
                   onPressed: () {
                     Navigator.pop(context);
-                    cardListData.cancelPressed();
                   },
                   icon: const Icon(Icons.close)),
             ],

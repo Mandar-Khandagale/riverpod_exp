@@ -1,11 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_exp/feature/home/data/model/card_details.dart';
+import 'package:riverpod_exp/feature/home/provider/home_provider.dart';
 import 'package:riverpod_exp/model/common_model.dart';
 
 class AccountSelectionNotifier extends StateNotifier<List<CardDetails>> {
-  AccountSelectionNotifier() : super([]) {
+  AccountSelectionNotifier({required this.ref}) : super([]) {
     getCardDetailsList();
   }
+
+  Ref ref;
 
   ///to store list of card details in state
   getCardDetailsList() {
@@ -46,7 +49,7 @@ class AccountSelectionNotifier extends StateNotifier<List<CardDetails>> {
         state.insert(0, selectedCard);
 
         state = [...state];
-      }else{
+      } else {
         state = [...state];
       }
     }
@@ -57,4 +60,31 @@ class AccountSelectionNotifier extends StateNotifier<List<CardDetails>> {
     state = [...state];
   }
 
+  ///to get selected account details
+  selectedAccount(String cardNo) {
+    state = ref.read(cardListProvider);
+
+    var selectedCard = const CardDetails();
+
+    for (int i = 0; i < state.length; i++) {
+      if (state[i].cardNo == cardNo) {
+        selectedCard = state[i];
+        state.remove(selectedCard);
+        state.insert(0, selectedCard);
+
+        state = [...state];
+      } else {
+        state = [...state];
+      }
+    }
+  }
+}
+
+///to set the color of selected account
+class SelectedAccount extends StateNotifier<int> {
+  SelectedAccount() : super(0);
+
+  getSelectedAccount(int index) {
+    state = index;
+  }
 }

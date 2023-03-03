@@ -57,9 +57,10 @@ class MyApp extends ConsumerWidget {
       ),
       theme: ThemeData(
         primarySwatch: Colors.amber,
+        brightness: Brightness.light
       ),
       darkTheme: ThemeData(
-        primarySwatch: Colors.green,
+        brightness: Brightness.dark,
       ),
       themeMode: themeData,
       localizationsDelegates: context.localizationDelegates,
