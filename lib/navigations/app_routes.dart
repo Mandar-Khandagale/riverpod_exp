@@ -4,6 +4,7 @@ import 'package:riverpod_exp/feature/joke/view/joke_page.dart';
 import 'package:riverpod_exp/feature/products/view/product_page.dart';
 import 'package:riverpod_exp/feature/products/widgets/product_detail_page.dart';
 import 'package:riverpod_exp/feature/settings/view/settings_page.dart';
+import 'package:riverpod_exp/feature/videos/view/video_view.dart';
 import 'package:riverpod_exp/navigations/routes.dart';
 import 'package:riverpod_exp/feature/home/view/home_page.dart';
 
@@ -36,10 +37,10 @@ class AppRoutes {
 
       case Routes.productDetailPage:
         return MaterialPageRoute(
-          builder: (context) => ProductDetailPage(args: settings.arguments as ProductDetailPageArgs),
+          builder: (context) => ProductDetailPage(
+              args: settings.arguments as ProductDetailPageArgs),
           settings: RouteSettings(
-            name: Routes.productDetailPage,
-            arguments: settings.arguments),
+              name: Routes.productDetailPage, arguments: settings.arguments),
         );
 
       case Routes.productPage:
@@ -47,6 +48,10 @@ class AppRoutes {
           builder: (context) => const ProductPage(),
         );
 
+      case Routes.videoPage:
+        return MaterialPageRoute(
+          builder: (context) => const VideoViewPage(),
+        );
 
       default:
         return MaterialPageRoute(

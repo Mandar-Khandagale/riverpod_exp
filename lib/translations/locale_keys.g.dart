@@ -20,5 +20,6 @@ abstract class  LocaleKeys {
   static const cardDetails = 'cardDetails';
   static const myAccount = 'myAccount';
   static const done = 'done';
+  static const video = 'video';
 
 }
