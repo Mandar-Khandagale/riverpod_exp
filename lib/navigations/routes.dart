@@ -7,4 +7,6 @@ class Routes {
   static const String settingsPage = "/settingsPage";
   static const String productDetailPage = "/productDetailPage";
   static const String videoPage = "/videoPage";
+  static const String futureProviderPage = "/futureProviderPage";
+  static const String hooksExp = "/hooksExp";
 }

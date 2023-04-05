@@ -60,6 +60,26 @@ class SettingsPage extends ConsumerWidget {
             ),
           ),
           const Divider(thickness: 1),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ListTile(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, Routes.futureProviderPage);
+              },
+              title: Text(LocaleKeys.futureProviderView.tr()),
+            ),
+          ),
+          const Divider(thickness: 1),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: ListTile(
+              onTap: () {
+                Navigator.pushReplacementNamed(context, Routes.hooksExp);
+              },
+              title: const Text("Hooks Demo"),
+            ),
+          ),
+          const Divider(thickness: 1),
           const Spacer(),
           const Padding(
             padding: EdgeInsets.all(20.0),

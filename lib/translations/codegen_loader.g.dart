@@ -34,7 +34,8 @@ class CodegenLoader extends AssetLoader{
   "cardDetails": "Card Details",
   "myAccount": "My Account",
   "done": "Done",
-  "video": "Videos"
+  "video": "Videos",
+  "futureProviderView": "Future Provider View"
 };
 static const Map<String,dynamic> hi = {
   "title": "शीर्षक",
@@ -56,7 +57,8 @@ static const Map<String,dynamic> hi = {
   "cardDetails": "कार्ड के विवरण",
   "myAccount": "मेरा खाता",
   "done": "पूर्ण",
-  "video": "वीडियो"
+  "video": "वीडियो",
+  "futureProviderView": "भविष्य प्रदाता देखें"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "hi": hi};
 }

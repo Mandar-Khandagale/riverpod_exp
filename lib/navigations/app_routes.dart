@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_exp/feature/favourites/view/favorite_page.dart';
+import 'package:riverpod_exp/feature/future_provider_exp/view/future_provider_view.dart';
+import 'package:riverpod_exp/feature/hooks/hooks_exp.dart';
 import 'package:riverpod_exp/feature/joke/view/joke_page.dart';
 import 'package:riverpod_exp/feature/products/view/product_page.dart';
 import 'package:riverpod_exp/feature/products/widgets/product_detail_page.dart';
@@ -52,6 +54,15 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => const VideoViewPage(),
         );
+
+      case Routes.futureProviderPage:
+        return MaterialPageRoute(
+            builder: (context) => const FutureProviderView());
+
+      case Routes.hooksExp:
+        return MaterialPageRoute(
+            builder: (context) => const HooksExpPage());
+
 
       default:
         return MaterialPageRoute(

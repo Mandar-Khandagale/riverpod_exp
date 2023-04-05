@@ -41,6 +41,7 @@ dependencies:
   shared_preferences:
   json_annotation: ^4.8.0
   image_gallery_saver:
+  flutter_hooks: ^0.18.6
 
   ##video player
   chewie:

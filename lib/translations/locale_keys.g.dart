@@ -21,5 +21,6 @@ abstract class  LocaleKeys {
   static const myAccount = 'myAccount';
   static const done = 'done';
   static const video = 'video';
+  static const futureProviderView = 'futureProviderView';
 
 }
