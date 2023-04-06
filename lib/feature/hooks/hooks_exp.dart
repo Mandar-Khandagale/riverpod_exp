@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:riverpod_exp/feature/hooks/scroll_controller_hook.dart';
 
 class HooksExpPage extends HookWidget {
   const HooksExpPage({Key? key}) : super(key: key);
@@ -14,31 +14,12 @@ class HooksExpPage extends HookWidget {
 
     final count = useValueNotifier(0);
 
-    final scrollController = useScrollController();
+    // final scrollController = useScrollController();
 
     final fabAnimationController = useAnimationController(
-        duration: const Duration(milliseconds: 500), initialValue: 1);
-    useEffect(
-      () {
-        scrollController.addListener(() {
-          switch(scrollController.position.userScrollDirection) {
-            case ScrollDirection.forward:
-              fabAnimationController.forward();
-              break;
-            case ScrollDirection.reverse:
-              fabAnimationController.reverse();
-              break;
-            case ScrollDirection.idle:
-              break;
-          }
+        duration: kThemeAnimationDuration, initialValue: 1);
 
-        });
-        return () {
-          debugPrint("dispose State");
-        };
-      },
-      const [],
-    );
+    final scrollFABHook = useScrollControllerHook(fabAnimationController);
 
     final animationController = useAnimationController(
       duration: const Duration(seconds: 2),
@@ -100,7 +81,7 @@ class HooksExpPage extends HookWidget {
             const SizedBox(height: 30.0),
             Expanded(
               child: ListView.builder(
-                controller: scrollController,
+                controller: scrollFABHook,
                   shrinkWrap: true,
                   itemCount: 10,
                   itemBuilder: (context, index) {
